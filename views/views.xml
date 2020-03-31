@@ -1,0 +1,32 @@
+<odoo>
+  <data>
+    <record id="customer_product_form_view" model="ir.ui.view">
+      <field name="name">Customer Product Form</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//group[@name='sale']" position="before">
+          <group string="Customer Infos">
+            <field name="customer_ids">
+              <form>
+                <group string="">
+                  <field name="name"/>
+                  <field name="product_name"/>
+                  <field name="product_variant"/>
+                  <field name="product_code"/>
+                </group>
+              </form>
+              <tree>
+                <field name="name"/>
+                <field name="product_name"/>
+                <field name="product_variant"/>
+                <field name="product_code"/>
+              </tree>
+            </field>
+          </group>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>
